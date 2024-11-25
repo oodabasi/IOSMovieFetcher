@@ -1,0 +1,62 @@
+{
+   "checksum": "3e4e5ef2bd02ecf441d69d9375884315",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13313186786445404",
+            "date_last_used": "13329793662656348",
+            "guid": "3d32add0-3a33-4d48-8b68-fad548ef514d",
+            "id": "6",
+            "name": "DeepL Translate: The world's most accurate translator",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.deepl.com/en/translator",
+            "visit_count": 0
+         }, {
+            "date_added": "13317042481708632",
+            "date_last_used": "13374865854376070",
+            "guid": "134315a0-0bdc-4b95-b82d-77449939fa41",
+            "id": "7",
+            "name": "",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.youtube.com/",
+            "visit_count": 1
+         } ],
+         "date_added": "13377007713897521",
+         "date_last_used": "0",
+         "date_modified": "13317042481708632",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13377007713897523",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13377007713897524",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CkEKHgiIgQISCPgSEGOTAQAAKg4QABgBIAAoBTAAOABAABIAKhhlL25FVzUrOHRjeFhaeFJ0Q2tWbzRnPT1IA6AGDBKsAQgHEqcBChxWS2ZQL0ZCMXZCUll6TWRQUmJBTzFkOE4yY2M9EiQxMzQzMTVhMC0wYmRjLTRiOTUtYjgyZC03NzQ0OTkzOWZhNDEYACAAKAAwouSpm64yOI6W/+bWMECOlv/m1jBKHHJvV2liWERCM2c3OE5nOThxYVJNOHFHYng5RT1aHiIccXQvVGp2RWsvbDlWZVdpTHVON0NMeFdIYXFZPWX9nIxKwj4CYAUSrAEIBhKnAQocTjFnTk9IQUZkZWduQnk0L0M1eE1zVUdkZG9RPRIkM2QzMmFkZDAtM2EzMy00ZDQ4LThiNjgtZmFkNTQ4ZWY1MTRkGAAgACgAMNH47+7SMTjRo7q4yDBA0aO6uMgwShxKT29DTitFaURNS2Z2TjFrTlFUYlV6ZjhyQ3c9Wh4iHGVXdTJpT3hGMjN0K2xDVEE4L3FnTGNienVSYz1lGHTPpcI+AmAFEo4BCAESiQEKHHl4Si82ZnZrZWNyN2twNUVRekI0dFdMcGRiRT0SJDM1NWY2NTE0LWQ0MjItNWQxYy1hMmQ3LTkxMzk4NmI0ZjdiNhgAIAAoADCx1ujatDI47aqGi+ovQO2qhovqL0ocYVJDV0xnaEY5YjVJbnFLSUR2dUovanZRa0ZjPVoAZQAAAADCPgJgABKOAQgDEokBChxuamdEdTg4ZUNydlhwODZwRDdmSEdjcUZwODg9EiRhMGJhYzJmYy05ZjU3LTVhYWQtYmI3Yi03Zjc2ZjA4OTI3ODIYACAAKAAwstbo2rQyONurhovqL0Dbq4aL6i9KHHl6TkIwMWNuNTRBN2NSVTB1VCsvUGdtVHRVbz1aAGUAAAAAwj4CYAASjgEIAhKJAQocWWNTVG9udkVTUHdxQ3M0TDJjclZodjY4TDk4PRIkYTFiZmU0ZmMtN2IwNy01NTg5LTlkOTAtNWI4YWFiYmFlOTkwGAAgACgAMLPW6Nq0MjiNq4aL6i9AjauGi+ovShxvUFZraHdCUmJWNjVLQ1dSMitJT05IV29PdTg9WgBlAAAAAMI+AmAAMAA4AA==",
+   "version": 1
+}

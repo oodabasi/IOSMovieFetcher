@@ -1,0 +1,22 @@
+name: tmdb_app
+description: A Flutter app that interacts with TMDb API to display movies.
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+uses-material-design: true
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.2 # or the latest version
+
+  material_symbols_icons: ^4.2799.0
+
+flutter:
+  assets:
+    - assets/images/logo.png
+    - assets/images/arrowback.png
+    - assets/images/user_icon.png
+    - assets/images/lock_icon.png
+    - assets/images/star_icon.png

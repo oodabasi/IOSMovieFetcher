@@ -1,0 +1,1 @@
+ C:\\Users\\capta\\Desktop\\tmdb_app\\tmdp_app\\.dart_tool\\flutter_build\\7b141852d8c88188586e862cf6259724\\native_assets.yaml: 

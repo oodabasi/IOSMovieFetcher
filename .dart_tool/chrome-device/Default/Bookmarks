@@ -1,0 +1,52 @@
+{
+   "checksum": "fd03fd41f5e25ba8ac81ccd1d36d1158",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13313186786445404",
+            "date_last_used": "13329793662656348",
+            "guid": "3d32add0-3a33-4d48-8b68-fad548ef514d",
+            "id": "6",
+            "name": "DeepL Translate: The world's most accurate translator",
+            "type": "url",
+            "url": "https://www.deepl.com/en/translator"
+         }, {
+            "date_added": "13317042481708632",
+            "date_last_used": "13374865854376070",
+            "guid": "134315a0-0bdc-4b95-b82d-77449939fa41",
+            "id": "7",
+            "name": "",
+            "type": "url",
+            "url": "https://www.youtube.com/"
+         } ],
+         "date_added": "13377007713897521",
+         "date_last_used": "0",
+         "date_modified": "13317042481708632",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13377007713897523",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13377007713897524",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}
