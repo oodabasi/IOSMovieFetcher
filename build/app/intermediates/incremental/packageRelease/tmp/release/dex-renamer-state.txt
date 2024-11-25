@@ -1,0 +1,4 @@
+#Mon Nov 25 15:50:13 TRT 2024
+base.0=C\:\\Users\\capta\\Desktop\\tmdb_app\\tmdp_app\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

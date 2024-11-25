@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class MovieDetailsPage extends StatefulWidget {
   final Map movie;
@@ -11,29 +13,46 @@ class MovieDetailsPage extends StatefulWidget {
 
 class _MovieDetailsPageState extends State<MovieDetailsPage>
     with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _fadeAnimation;
+  AnimationController? _controller;
+  Animation<double>? _fadeAnimation;
+  Map<String, dynamic>? castData;
 
   @override
   void initState() {
     super.initState();
-    // Initialize animation controller
     _controller = AnimationController(
       duration: const Duration(milliseconds: 500),
       vsync: this,
     );
     _fadeAnimation = CurvedAnimation(
-      parent: _controller,
+      parent: _controller!,
       curve: Curves.easeIn,
     );
+    _controller!.forward();
+    _fetchCastData();
+  }
 
-    // Start animation
-    _controller.forward();
+  _fetchCastData() async {
+    final movieId = widget.movie['id'];
+    final apiKey = '20d5092a928c73f98b8e8e3d8dbb4d1e'; // Replace with your TMDB API key
+    final url = Uri.parse(
+        'https://api.themoviedb.org/3/movie/$movieId/credits?api_key=$apiKey');
+    final response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      setState(() {
+        castData = data;
+      });
+    } else {
+      // Handle API error
+      print('Failed to fetch cast data');
+    }
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _controller!.dispose();
     super.dispose();
   }
 
@@ -45,7 +64,7 @@ class _MovieDetailsPageState extends State<MovieDetailsPage>
       appBar: AppBar(
         backgroundColor: Colors.black,
         iconTheme: IconThemeData(
-          color: Colors.blue, // Back button icon (can also be customized as image)
+          color: Colors.blue, // Back button icon
         ),
         leading: GestureDetector(
           onTap: () {
@@ -67,12 +86,12 @@ class _MovieDetailsPageState extends State<MovieDetailsPage>
       ),
       backgroundColor: Colors.black,
       body: FadeTransition(
-        opacity: _fadeAnimation,
+        opacity: _fadeAnimation!,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              // Movie Banner
+              // Movie Banner (unchanged)
               Container(
                 margin: EdgeInsets.all(8.0),
                 decoration: BoxDecoration(
@@ -93,13 +112,12 @@ class _MovieDetailsPageState extends State<MovieDetailsPage>
                   ),
                 ),
               ),
-              // Movie Details
+              // Movie Details (unchanged)
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Title
                     Text(
                       movie['title'],
                       style: TextStyle(
@@ -109,7 +127,6 @@ class _MovieDetailsPageState extends State<MovieDetailsPage>
                       ),
                     ),
                     SizedBox(height: 8),
-                    // Release Date
                     Text(
                       'Release Date: ${movie['release_date']}',
                       style: TextStyle(
@@ -118,14 +135,13 @@ class _MovieDetailsPageState extends State<MovieDetailsPage>
                       ),
                     ),
                     SizedBox(height: 16),
-                    // Rating
                     Row(
                       children: [
                         Image.asset(
-                          'assets/images/star_icon.png', // Replace the star icon with a custom PNG
+                          'assets/images/star_icon.png', // Replace with your star icon
                           width: 20,
                           height: 20,
-                          color: Colors.blue, // Optional: Adjust color if needed
+                          color: Colors.blue,
                         ),
                         SizedBox(width: 4),
                         Text(
@@ -135,7 +151,6 @@ class _MovieDetailsPageState extends State<MovieDetailsPage>
                       ],
                     ),
                     SizedBox(height: 16),
-                    // Overview
                     Text(
                       'Overview',
                       style: TextStyle(
@@ -153,9 +168,44 @@ class _MovieDetailsPageState extends State<MovieDetailsPage>
                         height: 1.5,
                       ),
                     ),
+                    SizedBox(height: 16),
+                    Text(
+                      'Cast',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
                   ],
                 ),
               ),
+              // Cast section
+              if (castData != null)
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: castData!['cast'].length.clamp(0, 10), // Limit to 10 cast members
+                  itemBuilder: (context, index) {
+                    final castMember = castData!['cast'][index];
+                    return ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage: NetworkImage(
+                          'https://image.tmdb.org/t/p/w185${castMember['profile_path']}',
+                        ),
+                        radius: 30, // Profil fotoğrafı boyutunu ayarlayın
+                      ),
+                      title: Text(
+                        castMember['name'],
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                      subtitle: Text(
+                        'Character: ${castMember['character']}',
+                        style: TextStyle(color: Colors.blue[300]),
+                      ),
+                    );
+                  },
+                ),
             ],
           ),
         ),
